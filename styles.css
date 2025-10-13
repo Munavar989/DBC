@@ -1019,7 +1019,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  /* height: 70px; */
   padding: 0 1.5rem;
 }
 
@@ -1051,7 +1051,7 @@ footer {
     display: flex;
     gap: 1.5rem;
     list-style: none;
-    margin-left: 800px;
+    margin-left: 850px;
     margin-top: -40px;
     padding-left: 90px;
   }
