@@ -550,8 +550,9 @@ section {
 }
 
 /* Animated state */
+/* Animated state */
 .service-card.animate-in {
-  animation: zoomFadeUp 0.9s ease-out forwards;
+  animation: fadeLiftIn 1s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
   will-change: transform, opacity;
 }
 
@@ -566,46 +567,14 @@ section {
 }
 
 /* Keyframes */
-@keyframes zoomFadeUp {
+@keyframes fadeLiftIn {
   0% {
     opacity: 0;
-    transform: scale(0.9) translateY(40px);
-    filter: blur(6px);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.02) translateY(-6px);
-    filter: blur(0);
+    transform: translateY(40px);
   }
   100% {
-    transform: scale(1) translateY(0);
     opacity: 1;
-  }
-}
-@media (max-width: 768px) {
-  .service-card.animate-in {
-    animation: mobileSlideFade 0.8s ease-out forwards;
-  }
-
-  .service-card:nth-child(1) {
-    animation-delay: 0.1s;
-  }
-  .service-card:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  .service-card:nth-child(3) {
-    animation-delay: 0.3s;
-  }
-
-  @keyframes mobileSlideFade {
-    0% {
-      opacity: 0;
-      transform: translateY(60px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    transform: translateY(0);
   }
 }
 
@@ -1061,7 +1030,8 @@ footer {
 .logo-img {
   height: 70px;
   width: auto;
-  padding-left: 15px;
+  padding-left: 25px;
+  margin-top: 20px;
   transition: opacity 0.3s ease;
 }
 
@@ -1096,7 +1066,7 @@ footer {
 
   .nav-links li a:hover {
     transform: translateY(-3px);
-    color: #0a6ebf;
+    color: #2c58e8;
   }
 }
 
@@ -1214,16 +1184,19 @@ header {
 }
 
 .landing-section.page-web {
-  background: url('Media/dev4.jpg') no-repeat center center/cover;
+  background: url('Media/website1.jpg') no-repeat center center/cover;
 }
 
 .landing-section.page-software {
-  background: url('Media/dev2.jpg') no-repeat center center/cover;
+  background: url('Media/software0.jpg') no-repeat center center/cover;
 }
 
 .landing-section.page-business {
-  background: url('Media/business.jpg') no-repeat center center/cover;
+  background: url('Media/business3.jpg') no-repeat center center/cover;
 }
+
+
+
 
 .landing-overlay {
   width: 100%;
@@ -1233,17 +1206,45 @@ header {
 
 .landing-text {
   max-width: 600px;
+  padding: 2rem;
+  padding-bottom: 100px;
   font-size: 1.2rem;
-  line-height: 1.6;
+  line-height: 1.8;
+  color: #040404;
+  backdrop-filter: blur(2px); /* Softens background behind text */
+  -webkit-backdrop-filter: blur(2px);
+  text-shadow: 1px 1px 4px rgb(52, 61, 183); /* Adds contrast */
 }
 
 .landing-text h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
+  font-weight: 700;
   margin-bottom: 1rem;
+  color: #fffefe;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
 .landing-text p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #060505;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.landing-text {
+  animation: fadeSlideUp 1.2s ease-out forwards;
+  opacity: 0; /* Start hidden */
 }
 
 /* software-development.css */
@@ -1416,4 +1417,5 @@ header {
     text-align: center;
   }
 }
+
 
