@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         subject: subject,
         message: message
       };
-      emailjs.send("service_mfkaulr", "template_r9xbr2v", templateParams)
+      emailjs.send("service_zosi8sr", "template_r9xbr2v", templateParams)
         .then(function () {
           alert('✅ Message sent successfully!');
           form.reset();
