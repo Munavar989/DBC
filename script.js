@@ -35,7 +35,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Form Validation and Submission
 // Include this only if you're not already loading email.min.js in your HTML
 document.addEventListener('DOMContentLoaded', function () {
-  emailjs.init("K7w0c4WOb6GdJoSHe"); // Your public key
+  emailjs.init("EXVDcCkBElp40aR_E"); // Your public key
 
   const form = document.getElementById('contact-form');
   console.log("Form found:", form);
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         subject: subject,
         message: message
       };
-      emailjs.send("service_zosi8sr", "template_r9xbr2v", templateParams)
+      emailjs.send("service_lliqosb", "template_kbqluem", templateParams)
         .then(function () {
           alert('✅ Message sent successfully!');
           form.reset();
