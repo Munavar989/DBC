@@ -1419,3 +1419,51 @@ header {
 }
 
 
+  /* Brand-aligned SweetAlert2 theme (Blue + White) */
+  .swal2-popup {
+    border-radius: 1rem !important;
+    background: linear-gradient(145deg, #ffffff, #f3f8ff);
+    box-shadow: 0 10px 40px rgba(0, 64, 128, 0.15);
+    backdrop-filter: blur(10px);
+    overflow: hidden !important; /* remove scrollbar */
+  }
+
+  .swal2-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #004aad;
+    letter-spacing: 0.3px;
+  }
+
+  .swal2-html-container {
+    font-family: "Inter", sans-serif;
+    color: #333;
+    font-size: 15px;
+    margin: 0 !important;
+    overflow: hidden !important; /* extra scroll fix */
+  }
+
+  /* Custom single blue spinner */
+  .custom-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #007bff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    margin: 25px auto;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Animation */
+  .swal2-show {
+    animation: fadeInUp 0.35s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from { transform: translateY(15px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
