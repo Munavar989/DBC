@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log("Form found:", form);
 
   if (!form) return;
+  form.setAttribute('novalidate', true); // Disable browser’s default validation
 
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const subject = form.elements["subject"].value.trim();
     const message = form.elements["message"].value.trim();
 
+    // JS-based validation only
     if (!name || !email || !subject || !message || !phone) {
       Swal.fire({
         icon: 'warning',
@@ -74,10 +76,22 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       return;
     }
+    const phoneRegex = /^\d{10}$/;
+    if (!phoneRegex.test(phone)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid Contact Number',
+        text: 'Please enter a valid 10-digit phone number.',
+        background: '#ffffff',
+        color: '#004aad',
+        timer: 2200,
+        showConfirmButton: false,
+      });
+      return;
+    }
 
     const templateParams = { from_name: name, email, phone, subject, message };
 
-    // Fixed loading box
     Swal.fire({
       title: 'Sending Message...',
       html: '<div class="custom-spinner"></div>',
@@ -119,10 +133,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
-
-
-
 
 
 
@@ -171,7 +181,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// logo and navbar color change on scroll
+// logo and navbar color change on scroll 
 
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
